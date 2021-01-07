@@ -8,7 +8,10 @@
     "start:dev": "nodemon",
     "test": "nodemon --config ./spec/nodemon.json",
     "format:check": "prettier --check \"**/*.ts\" ",
-    "format:write": "prettier --write \"**/*.ts\" "
+    "format:write": "prettier --write \"**/*.ts\" ",
+    "docker:up": "docker-compose up",
+    "init:db": "aws dynamodb create-table --cli-input-json file://dynamodb-sample-table.json --endpoint-url http://localhost:8000",
+    "docker:down": "docker-compose down"
   },
   "_moduleAliases": {
     "@entities": "dist/entities",
@@ -16,6 +19,9 @@
     "@server": "dist/Server"
   },
   "dependencies": {
+    "@typedorm/common": "^1.4.0",
+    "@typedorm/core": "^1.4.0",
+    "aws-sdk": "^2.823.0",
     "command-line-args": "^5.1.1",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
@@ -26,7 +32,8 @@
     "jet-logger": "^1.0.4",
     "jsonfile": "^6.1.0",
     "module-alias": "^2.2.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/command-line-args": "^5.0.0",

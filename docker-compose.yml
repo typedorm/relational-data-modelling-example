@@ -1,0 +1,7 @@
+version: '3.9'
+
+services:
+  ddb:
+    image: amazon/dynamodb-local
+    ports:
+      - '8000:8000'
