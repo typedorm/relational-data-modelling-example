@@ -1,5 +1,5 @@
 import { Request } from 'express';
-import { IUser } from '@entities/User';
+import { IUser } from '@entities/user';
 
 export const paramMissingError =
   'One or more of the required parameters was missing.';
